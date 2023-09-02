@@ -1,11 +1,10 @@
 import './App.css'
+import SayHello from './components/SayHello'
 
 function App() {
-
-
   return (
 <div className='container'>
-      <h1>Hello with typescript </h1>
+ <SayHello name="mohamed" age={21} logIn = {false}/>
 </div>
   )
 }
