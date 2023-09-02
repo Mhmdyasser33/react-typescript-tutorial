@@ -1,14 +1,16 @@
 type Props = {
-  name : string ;
-  age : number ;
-  logIn : boolean ;
+   userInfo : {
+    name : string ;
+    age : number ;
+    login : boolean ;
+   }
 }
 
-const SayHello = ({name , age , logIn} : Props) => {
+const SayHello = ({userInfo} : Props) => {
   return (
     <>
-    <h1> Hello {logIn ? name : "Guest"}</h1>
-    <h2>my age is {age}</h2>
+   <h1>{userInfo.name ? `hello ${userInfo.name}` : "hello Guest"}</h1>
+   <h2>My age is {userInfo.age}</h2>
     </>
   )
 }
