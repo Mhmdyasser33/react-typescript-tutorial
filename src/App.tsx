@@ -1,11 +1,12 @@
 import './App.css'
 import Heading from './components/Heading'
 /* import SayHello from './components/SayHello' */
-import Status from './components/status'
+import Status from './components/Status'
 import Layout from './components/Layout'
 import Button from './components/Button'
 import Input from './components/Input'
 import Main from './components/Main'
+import ProductOb from './components/ProductOb'
 function App() {
  /*  const loginUserDetails = [
     {
@@ -24,6 +25,23 @@ function App() {
       login : true ,
     },
   ] */
+  const Products = [
+    {
+      id : 1 ,
+      name : "product 1" ,
+      price : 100 ,
+    },
+    {
+      id : 2 ,
+      name : "product 2" ,
+      price : 200 ,
+    },
+    {
+      id : 3 ,
+      name : "product 3" ,
+      price : 300 ,
+    }
+  ]
   return (
 <div className='container'>
  {/* <SayHello loginUserDetails = {loginUserDetails} /> */}
@@ -37,6 +55,7 @@ function App() {
 <Button handleClick={(e , id , name) => console.log(e.target , id , name)}/>
 <Input value='mohamed' handleChange={(e) => console.log(e.target.value) }/>
  <Main cssStyle={{fontSize : "30px" , color : "red" , border : "1px solid green"}}/>
+   <ProductOb products={Products}/>
 </div>
   )
 }
