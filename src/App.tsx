@@ -1,8 +1,10 @@
 import './App.css'
-import SayHello from './components/SayHello'
-
+import Heading from './components/Heading'
+/* import SayHello from './components/SayHello' */
+import Status from './components/status'
+import Layout from './components/Layout'
 function App() {
-  const loginUserDetails = [
+ /*  const loginUserDetails = [
     {
       name : "mohamed" ,
       age : 21 ,
@@ -18,12 +20,18 @@ function App() {
       age : 19 ,
       login : true ,
     },
-  ]
+  ] */
   return (
 <div className='container'>
- <SayHello loginUserDetails = {loginUserDetails} />
+ {/* <SayHello loginUserDetails = {loginUserDetails} /> */}
+<Status status ="success"/>
+{/* here we call heading component but send a children (text here) of type string  */}
+<Layout>
+<Heading>i'm the heading </Heading>
+</Layout>
 </div>
   )
 }
+
 
 export default App

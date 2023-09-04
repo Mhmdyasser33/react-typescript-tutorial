@@ -7,12 +7,14 @@ type Props = {
 }
 
 const SayHello = ({loginUserDetails} : Props) => {
+
   return (
     <>
       <ul>
          {loginUserDetails.map((item , index) =>(
       <li key={index}>
          {item.name} ----------- {item.age}
+
       </li>
          ))}
       </ul>
