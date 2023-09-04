@@ -3,6 +3,7 @@ import Heading from './components/Heading'
 /* import SayHello from './components/SayHello' */
 import Status from './components/status'
 import Layout from './components/Layout'
+import Button from './components/Button'
 function App() {
  /*  const loginUserDetails = [
     {
@@ -29,6 +30,7 @@ function App() {
 <Layout>
 <Heading>i'm the heading </Heading>
 </Layout>
+<Button handleClick={() => console.log("hello i'm mohamed")}/>
 </div>
   )
 }
