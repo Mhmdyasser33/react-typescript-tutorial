@@ -30,7 +30,7 @@ function App() {
 <Layout>
 <Heading>i'm the heading </Heading>
 </Layout>
-<Button handleClick={(e) => console.log(e.target)}/>
+<Button handleClick={(e , id , name) => console.log(e.target , id , name)}/>
 </div>
   )
 }
