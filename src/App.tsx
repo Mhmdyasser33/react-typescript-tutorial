@@ -30,7 +30,7 @@ function App() {
 <Layout>
 <Heading>i'm the heading </Heading>
 </Layout>
-<Button handleClick={() => console.log("hello i'm mohamed")}/>
+<Button handleClick={(e) => console.log(e.target)}/>
 </div>
   )
 }
