@@ -7,6 +7,7 @@ import Button from './components/Button'
 import Input from './components/Input'
 import Main from './components/Main'
 import ProductOb from './components/ProductOb'
+import LoggedIn from './components/LoggedIn'
 function App() {
  /*  const loginUserDetails = [
     {
@@ -56,9 +57,10 @@ function App() {
 <Input value='mohamed' handleChange={(e) => console.log(e.target.value) }/>
  <Main cssStyle={{fontSize : "30px" , color : "red" , border : "1px solid green"}}/>
    <ProductOb products={Products}/>
+   <LoggedIn/>
 </div>
   )
 }
 
-
+//todo : start from video 10 in typescript
 export default App
