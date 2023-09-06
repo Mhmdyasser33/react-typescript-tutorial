@@ -11,8 +11,8 @@ type stateProps = {
 
 
 type actionProps = {
-  type: string,
-  payload: number,
+  type: "INCREMENT" | "DECREMENT" | "RESET", //! this is called strict action it mean that specify the type with specific values..
+  payload?: number,
 };
 
 // This is the reducer function. It takes the current state and an action as input, and returns the new state.
@@ -22,14 +22,17 @@ const reducer = (state: stateProps, action: actionProps) => {
   // If the action type is "INCREMENT", increment the count by the payload.
   case "INCREMENT": {
     return {
-      count: state.count + action.payload,
+      count: state.count + (action.payload || 0) ,
     };
   }
   // If the action type is "DECREMENT", decrement the count by the payload.
   case "DECREMENT": {
     return {
-      count: state.count - action.payload,
+      count: state.count - (action.payload || 0 ),
     };
+  }
+  case "RESET" : {
+    return initialState ;
   }
   // If the action type is not recognized, return the current state.
   default:
@@ -49,6 +52,7 @@ const Counter = () => {
       <button onClick={() => dispatch({type: "INCREMENT", payload: 10})}>increment by 10</button>
       <h2>{state.count}</h2>
       <button onClick={() => dispatch({type: "DECREMENT", payload: 10})}>decrement by 10</button>
+      <button onClick={() => dispatch({type: "RESET"})}>Reset </button>
     </div>
   );
 };
