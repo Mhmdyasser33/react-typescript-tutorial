@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 
+
 const initialState = {
   count: 0,
 };
@@ -9,10 +10,19 @@ type stateProps = {
   count: number,
 };
 
+// This is the type of the action props.
+// It can be either an `UpdateActionProps` or a `Reset` action.
+type actionProps = UpdateActionProps | Reset;
 
-type actionProps = {
-  type: "INCREMENT" | "DECREMENT" | "RESET", //! this is called strict action it mean that specify the type with specific values..
-  payload?: number,
+// The `UpdateActionProps` type defines the type of the update actions.
+type UpdateActionProps = {
+  type: "INCREMENT" | "DECREMENT",
+  payload: number,
+};
+
+
+type Reset = {
+  type: "RESET",
 };
 
 // This is the reducer function. It takes the current state and an action as input, and returns the new state.
@@ -22,17 +32,18 @@ const reducer = (state: stateProps, action: actionProps) => {
   // If the action type is "INCREMENT", increment the count by the payload.
   case "INCREMENT": {
     return {
-      count: state.count + (action.payload || 0) ,
+      count: state.count + action.payload,
     };
   }
   // If the action type is "DECREMENT", decrement the count by the payload.
   case "DECREMENT": {
     return {
-      count: state.count - (action.payload || 0 ),
+      count: state.count - action.payload,
     };
   }
-  case "RESET" : {
-    return initialState ;
+  // If the action type is "RESET", reset the count to 0.
+  case "RESET": {
+    return initialState;
   }
   // If the action type is not recognized, return the current state.
   default:
@@ -48,7 +59,6 @@ const Counter = () => {
   // Return the UI of the counter.
   return (
     <div>
-
       <button onClick={() => dispatch({type: "INCREMENT", payload: 10})}>increment by 10</button>
       <h2>{state.count}</h2>
       <button onClick={() => dispatch({type: "DECREMENT", payload: 10})}>decrement by 10</button>
@@ -56,4 +66,5 @@ const Counter = () => {
     </div>
   );
 };
+
 export default Counter;
