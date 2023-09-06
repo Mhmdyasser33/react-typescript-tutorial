@@ -8,6 +8,7 @@ import Input from './components/Input'
 import Main from './components/Main'
 import ProductOb from './components/ProductOb'
 import LoggedIn from './components/LoggedIn'
+import Counter from './components/Counter'
 function App() {
  /*  const loginUserDetails = [
     {
@@ -58,6 +59,7 @@ function App() {
  <Main cssStyle={{fontSize : "30px" , color : "red" , border : "1px solid green"}}/>
    <ProductOb products={Products}/>
    <LoggedIn/>
+   <Counter/>
 </div>
   )
 }
